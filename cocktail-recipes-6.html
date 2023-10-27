@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cocktail-recipes-6</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/media-queries.css" />
+    <script src="./js/3x.js"></script>
+    <script src="./js/burger.js"></script>
+</head>
+<body class="make-a-mix-body">
+    <script>
+        let touchStartX = 0;
+        let touchStartY = 0;
+    
+        function handleTouchStart(e) {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        }
+    
+        function handleTouchEnd(e) {
+            const touchEndX = e.changedTouches[0].clientX;
+            const touchEndY = e.changedTouches[0].clientY;
+            const swipeThreshold = 50;
+    
+            const deltaX = touchStartX - touchEndX;
+            const deltaY = touchStartY - touchEndY;
+    
+            if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                if (deltaX > swipeThreshold) {
+                    window.location.replace('./cocktail-recipes-7.html');
+                } else if (deltaX < -swipeThreshold) {
+                    window.location.replace('./cocktail-recipes-5.html');
+                }
+            } else {
+                if (deltaY > swipeThreshold) {
+                    window.location.replace('./cocktail-recipes-7.html');
+                } else if (deltaY < -swipeThreshold) {
+                    window.location.replace('./cocktail-recipes-5.html');
+                }
+            }
+        }
+    
+        document.body.addEventListener('touchstart', handleTouchStart);
+        document.body.addEventListener('touchend', handleTouchEnd);
+    </script>
+    <header>
+        <div class="logo">           
+            <p class="logo-symbol">Я</p>            
+            <p class="logo-word">Реклама</p>
+        </div>
+        <div class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <div class="menu">
+        <nav>
+            <ul>
+                <li><a href="./greetings.html">Сейчас мы все настроим!</a></li>
+                <li><a href="./lights.html">Включаем гирлянду</a></li>
+                <li><a class="link-sub-active" href="./make-a-mix.html">Сделай микс!</a></li>
+                <li><a class="link-active" href="./cocktail-recipes-1.html">Рецепты коктейлей</a></li>
+                <li><a class="link-sub-active" href="./feel-the-rhythm.html">Праздничный плейлист</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="layer lights-instructions-layer layer1"></div>
+    <div class="layer lights-instructions-layer layer2"></div>
+    <div class="layer lights-instructions-layer layer3"></div>
+    <!-- <h1 class="cocktail-recipes-h1"></h1> -->
+    <div class="cocktail-recipes-pic-5"></div>
+    <p class="cocktail-recipes-under-h1">По желанию напиток можно украсить цедрой апельсина</p>
+    <div class="coctail-recipes-bottle"></div>
+    <a href="./cocktail-recipes-7.html" class="make-a-mix-footer-button">
+        <div class="footer-button-arrow"></div>
+    </a>
+</body>
+</html>

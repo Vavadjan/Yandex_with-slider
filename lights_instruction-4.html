@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lights-instruction-4</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/media-queries.css" />
+    <script src="./js/3x.js"></script>
+    <script src="./js/burger.js"></script>
+</head>
+<body class="instruction-body">
+    <script>
+        let touchStartX = 0;
+        let touchStartY = 0;
+    
+        function handleTouchStart(e) {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        }
+    
+        function handleTouchEnd(e) {
+            const touchEndX = e.changedTouches[0].clientX;
+            const touchEndY = e.changedTouches[0].clientY;
+            const swipeThreshold = 50;
+    
+            const deltaX = touchStartX - touchEndX;
+            const deltaY = touchStartY - touchEndY;
+    
+            if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                if (deltaX > swipeThreshold) {
+                    window.location.replace('./lights_instruction-5.html');
+                } else if (deltaX < -swipeThreshold) {
+                    window.location.replace('./lights_instruction-3.html');
+                }
+            } else {
+                if (deltaY > swipeThreshold) {
+                    window.location.replace('./lights_instruction-5.html');
+                } else if (deltaY < -swipeThreshold) {
+                    window.location.replace('./lights_instruction-3.html');
+                }
+            }
+        }
+    
+        document.body.addEventListener('touchstart', handleTouchStart);
+        document.body.addEventListener('touchend', handleTouchEnd);
+    </script>
+    <header>
+        <div class="logo">           
+            <p class="logo-symbol">Я</p>            
+            <p class="logo-word">Реклама</p>
+        </div>
+        <div class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <div class="menu">
+        <nav>
+            <ul>
+                <li><a class="link-sub-active" href="./greetings.html">Сейчас мы все настроим!</a></li>
+                <li><a class="link-active" href="./lights.html">Включаем гирлянду</a></li>
+                <li><a class="link-sub-active" href="./make-a-mix.html">Сделай микс!</a></li>
+                <li><a href="./cocktail-recipes-1.html">Рецепты коктейлей</a></li>
+                <li><a href="./feel-the-rhythm.html">Праздничный плейлист</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="layer lights-instructions-layer layer1"></div>
+    <div class="layer lights-instructions-layer layer2"></div>
+    <div class="layer lights-instructions-layer layer3"></div>
+    <div class="smart-screen-block"> 
+        <div class="smart-screen smart-screen-instruction-pic-4"></div>       
+        <p class="smart-screen-instruction-text">В приложении Яндекс перейдите 
+            в раздел "Устройства" и выберите пункт "Умный дом". Если приложения нет, скачайте 
+            его из App Store или Google play.<br><br>            
+            <a class="smart-screen-link" href="#">Скачать из App Store</a>
+            <a class="smart-screen-link" href="#">Скачать из Google play</a>
+        </p>
+    </div>
+    <div class="gerland gerland-instruction-4"></div>
+    <a href="./lights_instruction-5.html" class="lights-footer-button">
+        <div class="lights-footer-button-arrow"></div>
+    </a>
+</body>
+</html>
