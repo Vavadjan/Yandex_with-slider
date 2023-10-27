@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>slider-test</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/media-queries.css" />
+    <script src="./js/3x.js"></script>
+    <script src="./js/burger.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="./js/jquery.rotating-slider.js"></script>
+    <script>
+    $(function() {
+        $('.rotating-slider').rotatingSlider({
+            slideHeight : 812,
+            slideWidth : Math.min(375, document.querySelector('.rotating-slider-container' ).offsetWidth)
+        });
+    });</script>
+  </head>
+  <div class="rotating-slider-container">
+    <div class="rotating-slider">
+      <ul class="slides">
+        <li>
+          <div class="slide-inner">
+            <div class="age-verification-page-body">
+                <header class="age-verification-page-header">
+                    <div class="logo">           
+                        <p class="logo-symbol">Я</p>            
+                        <p class="logo-word">Реклама</p>
+                    </div>
+                </header>
+                <!-- <div class="layer layer1"></div>
+                <div class="layer layer2"></div>
+                <div class="layer layer3"></div> -->
+                <h1 class="age-verification-page-h1">Вам уже есть<br>18 лет?</h1>
+                <p class="under-h1 age-verification-page-under-h1">Доступ к этой странице разрешен только совершеннолетним пользователям</p>
+                <div class="age-verification-page-links">
+                    <a class="no-link" href="./index.html">Нет</a>
+                    <a class="yes-link" href="./greetings.html">Да</a>
+                </div>
+            </div>
+          </div>
+        </li>
+        <li style="background-image: url(lara.jpg)">
+          <div class="slide-inner">
+            <div class="greetings-body">
+                <header>
+                    <div class="logo">           
+                        <p class="logo-symbol">Я</p>            
+                        <p class="logo-word">Реклама</p>
+                    </div>
+                    <div class="menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </header>
+                <div class="menu">
+                    <nav>
+                        <ul>
+                            <li><a class="link-active" href="./greetings.html">Сейчас мы все настроим!</a></li>
+                            <li><a class="link-sub-active" href="./lights.html">Включаем гирлянду</a></li>
+                            <li><a href="./make-a-mix.html"">Сделай микс!</a></li>
+                            <li><a href="./cocktail-recipes-1.html">Рецепты коктейлей</a></li>
+                            <li><a href="./feel-the-rhythm.html">Праздничный плейлист</a></li> 
+                        </ul>
+                    </nav>
+                </div>
+                <div class="layer layer1"></div>
+                <div class="layer layer2"></div>
+                <div class="layer layer3"></div>
+                <h1 class="greetings-h1">Сейчас мы все настроим!</h1>
+                <p class="under-h1">До классной вечеринки<br> от <strong>Яндекс Рекламы</strong> осталось три простых шага!<br><br>Ниже делимся понятными инструкциями, чтобы подготовка прошла гладко.</p>
+                <a href="./lights.html" class="footer-buton greetings-footer-buton">
+                    <p class="footer-button-text">Начнем!</p>
+                </a>
+            </в>
+          </div>
+        </li>
+        <li style="background-image: url(aloy.jpg)">
+          <div class="slide-inner">
+            <div>Aloy</div>
+            <p>Horizon Zero Dawn</p>
+          </div>
+        </li>
+        <li style="background-image: url(ada.jpg)">
+          <div class="slide-inner">
+            <div>Ada Wong</div>
+            <p>Resident Evil</p>
+          </div>
+        </li>
+        <li style="background-image: url(senua.jpg)">
+          <div class="slide-inner">
+            <div>Senua</div>
+            <p>Hellblade</p>
+          </div>
+        </li>
+        <li style="background-image: url(kat.jpg)">
+          <div class="slide-inner">
+            <div>Kat</div>
+            <p>Devil May Cry</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</html>
